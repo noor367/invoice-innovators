@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Invoice Innovators</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap and Jquery -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- ./styles files -->
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/global.css" />
+</head>
+<body>
+  <header>
+    <h1 id="title">Invoice Innovators</h1>
+    <span class="navbar-nav container-fluid" id="nav-bar">
+      <button type="button" class="nav-btn" id="home-btn">
+        <span class="glyphicon glyphicon-home"></span>
+        Home
+      </button>
+      <button type="button" class="nav-btn" data-toggle="modal" data-target="#profile-modal" id="profile-btn">
+        <span class="glyphicon glyphicon-user"></span>
+        Profile
+      </button>
+      <button type="button" class="nav-btn" id="logout-btn">
+        <span class="glyphicon glyphicon-log-out"></span>
+        Logout
+      </button>
+    </header>
+    <div id="error-popup" class="error-popup">
+      <span id="error-message" class="error-message"></span>
+      <button id="close-error-btn">&times;</button>
+    </div>
+    <main role="main">
+      <!-- Authentication Forms -->
+      <!-- Adapted from https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp -->
+      <section class="container-fluid" id="auth">
+        <!-- Tabs to switch between Login/Register -->
+        <section class="container" id="auth-pills">
+          <ul class="nav nav-tabs">
+            <li class="active" id="login-pill"><a data-toggle="pill" href="#login-page">Login</a></li>
+            <li id="register-pill"><a data-toggle="pill" href="#register-page">Register</a></li>
+          </ul>
+        </section>
+        
+        <div class="tab-content" id="auth-forms">
+          <!-- Login form -->
+          <section class="tab-pane fade in active" id="login-page">
+            <h3>Login</h3>
+            <form id="login-form">
+              <label class="required-input" for="login-email">Email</label><br>
+              <input type="email" id="login-email" name="email" placeholder="name@example.com" autocomplete="off" required><br><br>
+              <label class="required-input" for="login-password">Password</label><br>
+              <input type="password" id="login-password" name="password" placeholder="Password" required><br><br>
+              <input class="btn btn-primary" type="submit" value="Login" id="login-btn"><br><br>
+            </form>
+          </section>
+          <!-- Register form -->
+          <section class="tab-pane fade" id="register-page">
+            <h3>Register</h3>
+            <form id="register-form">
+              <label class="required-input" for="register-fname">First Name</label><br>
+              <input type="text" id="register-fname" name="fname" placeholder="Jane" required><br><br>
+              <label class="required-input" for="register-lname">Last Name</label><br>
+              <input type="text" id="register-lname" name="lname" placeholder="Citizen" required><br><br>
+              <label class="required-input" for="register-email">Email</label><br>
+              <input type="email" id="register-email" name="email" placeholder="jane.citizen@example.com" autocomplete="off" required><br><br>
+              <label class="required-input" for="register-password">Password</label><br>
+              <input type="password" id="register-password" name="password" placeholder="Password" required><br><br>
+              <label class="required-input" for="confirm-password">Confirm Password</label><br>
+              <input type="password" id="confirm-password" name="password" placeholder="Password" required><br><br>
+              <input class="btn btn-primary" type="submit" value="Register" id="register-btn">
+            </form>
+          </section>
+        </div>
+      </section>
+      
+      <!-- Dashboard -->
+      <section class="container hidden-page" id="dashboard">
+        <img src="assets/logo.svg" class="dash-img">
+        <section class="container" id="landing-page">
+          <div>
+            <button class="dash-btn" id="create-btn">Create Invoice</button>
+            <button data-toggle="modal" data-target="#upload-modal" class="dash-btn" id="upload-btn">Upload Invoice</button>
+            <button class="dash-btn" id="view-btn">View Invoices</button>
+          </div>
+        </section>
+        <section class="hidden-page" id="create-page">
+          <!-- <iframe src="create.html" id="xml-form-iframe"></iframe> -->
+          <iframe src="https://ubl-invoice-generator.vercel.app/invoices/guest/gui?" id="xml-form-iframe"></iframe>
+        </section>
+        <section class="hidden-page" id="upload-page">
+          <div class="modal-header">
+            <h2 class="modal-title">Upload Invoice</h2>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label class="form-label required-input" for="upload-file">Upload a new invoice:</label>
+              <input type="file" class="form-control" id="upload-file" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label required-input" for="upload-type">Select Uploaded File Type:</label>
+              <select class="form-control" id="upload-type" required>
+                <option value="xml-file" selected>XML</option>
+                <option value="json-file" disabled>JSON</option>
+                <option value="csv-file" disabled>CSV</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label required-input" for="render-type">How would you like your invoice rendered?</label>
+              <select class="form-control" id="render-type" required>
+                <option value="html">HTML</option>
+                <option value="pdf">PDF</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label required-input" for="render-lan">Language for rendered invoice:</label>
+              <select class="form-control" id="render-lan" required>
+                <option value="arabic">Arabic</option>
+                <option value="chinese">Chinese</option>
+                <option value="english" selected>English</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+                <option value="hindi">Hindi</option>
+                <option value="italian">Italian</option>
+                <option value="japanese">Japanese</option>
+                <option value="spanish">Spanish</option>
+                <option value="vietnamese">Vietnamese</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="dash-btn" id="upload-submit">Upload</button>
+          </div>
+        </section>
+        <section class="hidden-page" id="view-page">
+          <table class="table table-striped thread-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">ID</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>0001</td>
+                <td>$20000</td>
+                <td>19/02/2023</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>0002</td>
+                <td>$100</td>
+                <td>10/02/2023</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <!-- Modal popups -->
+        <section>
+          <!-- View Profile -->
+          <div class="modal fade" tabindex="-1" role="dialog" id="profile-modal">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title">View Profile</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <span id="display-profile"></span>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" id="update-role-btn">Update</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Get Link -->
+          <div class="modal fade" tabindex="-1" role="dialog" id="render-modal">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title">Rendered Invoice</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <input type="text" id="invoice-link" readonly>
+                  <button id="cpy-link">Copy Link</button>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="src/index.js"></script>
+  </script>
+</body>
+</html>

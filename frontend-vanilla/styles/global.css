@@ -1,0 +1,136 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: large;
+}
+
+header {
+  margin: 0;
+  padding: auto;
+  background-color: #36275c;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 0;
+  padding: 1%;
+  color: white;
+}
+
+h3 {
+  text-align: center;
+}
+
+nav {
+  position: relative;
+}
+
+.invert-colour {
+  filter: invert();
+}
+
+.btn-purple {
+  background-color: #36275c;
+}
+
+.error-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightpink;
+  color: #721c24;
+  padding: 10px 20px;
+  border: 1px solid lightpink;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.error-message {
+  display: block;
+  padding: 2%;
+  margin-bottom: 10px;
+}
+
+.required-input:after { 
+  content:" *";
+  color:red;
+}
+
+#nav-bar {
+  display: none;
+  margin: 2vh;
+}
+
+#close-error-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #721c24;
+}
+
+#dashboard {
+  display: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#auth-pills {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+#auth-forms {
+  display: flex;
+  justify-content: center;
+}
+
+.dash-img {
+  margin-top: 2vh;
+  max-height: 20vh;
+}
+
+#landing-page {
+  display: flex;
+  width: 50vw;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.dash-btn {
+  padding: 2%;
+  width: 100%;
+  margin-top: 2vh;
+}
+
+#auth {
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  display: none;
+}
+
+.hidden-page {
+  display: none;
+}
+
+#upload-submit {
+  height: fit-content;
+}
+
+#xml-form-iframe {
+  width: 100%;
+  height: 50vh;
+}
