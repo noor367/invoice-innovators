@@ -1,0 +1,8 @@
+node_modules
+database.json
+invoicePDF/*.pdf
+coverage
+.nyc_output
+invoiceHTML/*.html
+invoiceJSON/*.json
+invoiceImage/*.png

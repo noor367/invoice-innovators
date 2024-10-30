@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "noEmit": true,
+    "types": ["jest", "node"]
+  },
+  "include": ["**/*.test.ts", "**/*.spec.ts"]
+}
+
+
+
+
+// {
+//         "extends": "./tsconfig.json",
+//         "compilerOptions": {
+//           "outDir": "./out-test",
+//           "rootDir": "./tests",
+//           "types": ["jest"]
+//         },
+//         "include": ["tests/**/*"]
+//       }
+      

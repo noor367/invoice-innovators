@@ -1,0 +1,48 @@
+{
+  "resourceType": "Invoice",
+  "id": 5,
+  "images": {
+    "logo": "http://localhost:3000//image/logo.png"
+  },
+  "sender_info": {
+    "company": "Ebusiness Software Services Pty Ltd",
+    "address": "100 Business St, Dulwich Hill, Australia",
+    "tax_nubmer": 80647710156
+  },
+  "customer_info": {
+    "company": "Test Company",
+    "street": "Some Street",
+    "city": "Sydney",
+    "postcode": 2052,
+    "country": "Australia"
+  },
+  "invoice_info": {
+    "invoice_number": 1002,
+    "invoice_creation_date": "2/7/2022"
+  },
+  "product_info": [
+    {
+      "productId": 1,
+      "name": "pencils",
+      "Quantity": 500,
+      "price": 0.2,
+      "amount": 100
+    },
+    {
+      "productId": 2,
+      "name": "pens",
+      "Quantity": 600,
+      "price": 0.5,
+      "amount": 300
+    },
+    {
+      "productId": 3,
+      "name": "pencilcases",
+      "Quantity": 200,
+      "price": 5,
+      "amount": 1000
+    }
+  ],
+  "gst": "10%",
+  "total": 1540
+}

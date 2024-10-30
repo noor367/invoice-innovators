@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice 1002</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 20px; }
+      .header { text-align: center; }
+      .logo { width: 200px; height: 200px;}
+      .section { margin-top: 20px; }
+      .info_container { display: flex; justify-content: space-between; align-items: center; }
+      .total { text-align: right; margin-top: 20px; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+      th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>INVOICE</h1>
+    </div>
+    <div class="info_container">
+      <div class="text_section">
+        <div class="section">
+            <strong>From:</strong><br>
+            Ebusiness Software Services Pty Ltd<br>
+            100 Business St, Dulwich Hill, Australia<br>
+            Tax Number: 80647710156<br>
+        </div>
+
+        <div class="section">
+        <strong>To:</strong><br>
+          Test Company<br>
+          Some Street<br>
+          Sydney<br>
+          2052<br>
+          Australia<br>
+        </div>
+      </div>
+      <!-- If you are viewing directly from the folder locally not from the server. -->
+      <!-- Please use the tab below. -->
+
+      <!-- For viewing locally -->
+      <img src="../image/logo.png" alt="Group Logo" class="logo">
+
+      <!-- For viewing on the server side -->
+      <!-- <img src="/image/logo.png" alt="Group Logo" class="logo"> -->
+    </div>
+    <div class="section">
+        <strong>Invoice Number:</strong> 1002<br>
+        <strong>Invoice Date:</strong> 2/7/2022<br>
+    </div>
+    <div class="section">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Amount</th>
+                <th>GST</th>
+                <th>GST at 10%</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>pencils</td>
+                <td>500</td>
+                <td>$0.20</td>
+                <td>$100.00</td>
+                <td>10%</td>
+                <td>10.00</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>pens</td>
+                <td>600</td>
+                <td>$0.50</td>
+                <td>$300.00</td>
+                <td>10%</td>
+                <td>30.00</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>pencilcases</td>
+                <td>200</td>
+                <td>$5.00</td>
+                <td>$1000.00</td>
+                <td>10%</td>
+                <td>100.00</td>
+            </tr>
+        </table>
+    </div>
+    <div class="total">
+        <strong>Total: $1540.00</strong>
+    </div>
+</body>
+</html>

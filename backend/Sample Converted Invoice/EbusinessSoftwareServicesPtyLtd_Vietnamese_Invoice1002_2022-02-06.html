@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="Vietnamese">
+<head>
+    <meta charset="UTF-8">
+    <title>HÓA ĐƠN</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 20px; }
+      .header { text-align: center; }
+      .logo { width: 200px; height: 200px;}
+      .section { margin-top: 20px; }
+      .info_container { display: flex; justify-content: space-between; align-items: center; }
+      .total { text-align: right; margin-top: 20px; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+      th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>HÓA ĐƠN</h1> <!-- INVOICE -->
+    </div>
+    <div class="info_container">
+      <div class="text_section">
+        <div class="section">
+            <strong>Từ:</strong><br> <!-- From: -->
+            Dịch vụ phần mềm Ebusiness Pty Ltd<br> <!-- Supplier Name -->
+            100 kinh doanh St, Dulwich Hill, Úc<br> <!-- Address -->
+            Số thuế: 80647710156<br> <!-- Tax Number -->
+        </div>
+        <div class="section">
+            <strong>ĐẾN:</strong><br> <!-- To: -->
+            Công ty kiểm tra<br> <!-- Customer Name -->
+            Một số đường phố<br> <!-- Street Name -->
+            Sydney<br> <!-- City -->
+            2052<br> <!-- Postcode -->
+            Châu Úc<br> <!-- Country -->
+        </div>
+      </div>
+      <!-- If you are viewing directly from the folder locally not from the server. -->
+      <!-- Please use the tab below. -->
+
+      <!-- For viewing locally -->
+      <img src="../image/logo.png" alt="Group Logo" class="logo">
+
+      <!-- For viewing on the server side -->
+      <!-- <img src="/image/logo.png" alt="Group Logo" class="logo"> -->
+    </div>
+    <div class="section">
+        <strong>Số hóa đơn:</strong> 1002<br>
+        <strong>Ngày hóa đơn:</strong> 2/7/2022<br>
+    </div>
+    <div class="section">
+        <table>
+            <thead>
+                <tr>
+                    <th>NHẬN DẠNG</th> <!-- ID -->
+                    <th>Tên</th> <!-- Name -->
+                    <th>Số lượng</th> <!-- Quantity -->
+                    <th>Giá</th> <!-- Price -->
+                    <th>Số lượng</th> <!-- Amount -->
+                    <th>GST</th> <!-- GST -->
+                    <th>GST ở mức 10%</th> <!-- GST at XX% -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Bút chì</td>
+                    <td>500</td>
+                    <td>$0,2</td>
+                    <td>$100</td>
+                    <td>10%</td>
+                    <td>$10.00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>bút mực</td>
+                    <td>600</td>
+                    <td>$0,5</td>
+                    <td>$300</td>
+                    <td>10%</td>
+                    <td>$30.00</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>hộp bút chì</td>
+                    <td>200</td>
+                    <td>$5</td>
+                    <td>$1000</td>
+                    <td>10%</td>
+                    <td>$100.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="total">
+        <strong>Tổng cộng: $1540.00</strong>
+    </div>
+</body>
+</html>
