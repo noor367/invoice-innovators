@@ -4,7 +4,9 @@
 
 A collaborative university project for the seng2021 course. Invoice Innovators is an invoice management service aimed towards small to medium businesses to address all their invoicing needs.
 
-I elected to not include the backend API since I was not the only one who worked on it. However, I did build the frontend.
+I led the development of the frontend and authored all the code contributions there.
+
+Code in the backend folder has multiple contributions from [Long Tran](https://github.com/bfgfdsu2), [Max Davison](https://github.com/MaxDavison41), and [Ashley Chen](https://github.com/4shleyc)
 
 ## Contents
 
@@ -15,6 +17,10 @@ I elected to not include the backend API since I was not the only one who worked
 `frontend-react` folder contains the files for the React.js web app version of the website, created with `create-react-app`.
 
 - This was a high-fidelity prototype for the project, using important elements of UI/UX design. However due to time constraints, the website may appear overly simple, without branding that seems unique to Invoice Innovators
+
+`backend` folder contains all the necessary server-side contents
+
+- This includes the RESTful API in the `backend/api` folder
 
 ## Context
 
